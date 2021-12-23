@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>JPG to PDF</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+	
+	<script type="text/javascript" src="pdf-lib.js"></script>
+	<script type="text/javascript" src="caman.full.js"></script>
+  </head>
+  <body>
+    
+	<img src="logo.png" class="logotype">
+	<form>
+		<div class="image_download">
+			<label for="choose-file">Загрузите изображения<br></label><br>
+			<div id="img-preview"></div>
+			<input type="file" accept="image/*" id="choose-file" name="choose-file" multiple />
+		</div>
+      <label class="config">Выберите необходимые настройки:</label>
+		<div>
+			<input type="checkbox" id="whiteblack" name="grey" value="!!">
+			<label for="whiteblack">Чёрно-белое</label>
+		</div>
+		<div>
+			<input type="range" id="sharpenAmount" name="sharpenAmount" min="0" max="100" value="70">
+			<label for="sharpenAmount">Резкость</label>
+		</div>
+		<div>
+			<input type="checkbox" id="doubleSharpen" checked>
+			<label for="doubleSharpen">Резкость дважды</label>
+		</div>
+		<div>
+			<input type="range" id="contrastAmount" min="-100" max="100" value="15">
+			<label for="contrastAmount">Контраст</label>
+		</div>
+		<div>
+			<input type="range" id="jpegQuality" min="0.1" max="1" step="0.1" value="0.2">
+			<label for="jpegQuality">Качество jpeg</label>
+		</div>
+    <div>
+      <button type="button" id="go">В pdf</button>
+    </div>
+	</form>
+	
+	<iframe id="pdf" style="width: 100%; height: 100%;"></iframe>
+	
+    <script src="script.js"></script>
+  </body>
+</html>
